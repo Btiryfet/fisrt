@@ -18,20 +18,20 @@ int  StrEqual(char* p, char str[])
 }
 void jiaohuan(char* p, char str2[], char str3[])
 {
-	if (strlen(str2) <= strlen(str3))//ĞèÒª´Óp+strlen(str2)¿ªÊ¼ÒÆ¶¯£¬ÒÆ¶¯strlen(str3)-strlen(str2)¸ö³¤¶È
+	if (strlen(str2) <= strlen(str3))//éœ€è¦ä»p+strlen(str2)å¼€å§‹ç§»åŠ¨ï¼Œç§»åŠ¨strlen(str3)-strlen(str2)ä¸ªé•¿åº¦
 	{
-		//¿Õ³öÎ»ÖÃ
-		for (int j = 0; j < strlen(str3) - strlen(str2); j++)//¿Õ³östrlen(str3)-strlen(str2)¸ö¿Õ¸ñ
+		//ç©ºå‡ºä½ç½®
+		for (int j = 0; j < strlen(str3) - strlen(str2); j++)//ç©ºå‡ºstrlen(str3)-strlen(str2)ä¸ªç©ºæ ¼
 		{
 			int n = 0;
-			for (n = 0; *(p + n) != '\0'; n++);//ÕÒµ½Ä©Î²
+			for (n = 0; *(p + n) != '\0'; n++);//æ‰¾åˆ°æœ«å°¾
 			for (int i = 0; p + n - i >= p + strlen(str2); i++)
 			{
 				*(p + n + 1 - i) = *(p + n - i);
 			}
 		}
 
-		//Ìæ»»ÖĞ
+		//æ›¿æ¢ä¸­
 		for (int i = 0; str3[i] != '\0'; i++)
 		{
 			*(p + i) = str3[i];
@@ -40,8 +40,8 @@ void jiaohuan(char* p, char str2[], char str3[])
 	}
 	else
 	{
-		for (int j = 0; *(p + strlen(str3) + j) = *(p + strlen(str3) + j + 1); j++);//ÏÈÌîµôÃ»ÓÃµÄ¿Õ¸ñ
-		//¿ªÊ¼Ìæ»»
+		for (int j = 0; *(p + strlen(str3) + j) = *(p + strlen(str3) + j + 1); j++);//å…ˆå¡«æ‰æ²¡ç”¨çš„ç©ºæ ¼
+		//å¼€å§‹æ›¿æ¢
 		for (int i = 0; str3[i] != '\0'; i++)
 		{
 			*(p + i) = str3[i];
@@ -71,20 +71,20 @@ void tihuan(char str1[], char str2[], char str3[])
 int main(void)
 {
 	char str1[100];
-	printf("ÇëÊäÈëÔ´×Ö·û´®:\n");
+	printf("è¯·è¾“å…¥æºå­—ç¬¦ä¸²:\n");
 	gets(str1);
 	char str2[50];
-	printf("ÇëÊäÈëÏëÌæ»»µÄ×Ö·û´®:\n");
+	printf("è¯·è¾“å…¥æƒ³æ›¿æ¢çš„å­—ç¬¦ä¸²:\n");
 	gets(str2);
 	char str3[80];
-	printf("ÇëÊäÈëÏëÌæ»»³ÉµÄ×Ö·û´®:\n");
+	printf("è¯·è¾“å…¥æƒ³æ›¿æ¢æˆçš„å­—ç¬¦ä¸²:\n");
 	gets(str3);
-	//´¦ÀíÇø
+	//å¤„ç†åŒº
 
 	tihuan(str1, str2, str3);
 
-	//Êä³öÇø
-	printf("Ìæ»»ºóµÄ×Ö·û´®Îª:\n");
+	//è¾“å‡ºåŒº
+	printf("æ›¿æ¢åçš„å­—ç¬¦ä¸²ä¸º:\n");
 	printf("%s", str1);
 	system("pause");
 	return 0;
